@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Header from './components/Header';
-import Forminput from './components/Forminput';
+import Header from './components/GetData';
 import registerServiceWorker from './registerServiceWorker';
-
+import Forminput from './components/Forminput';
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import {BrowserRouter,Route} from "react-router-dom";
 class App extends React.Component {
     render() {
         return (
+            <BrowserRouter>
             <div>
-                <Header />
-                <Forminput />
+                <Navbar/>
+                <Route path ="/" component={Home}/>
+                <Route path="/getmovies" component={Header}/>
+                <Route path="/addmovie" component={Forminput}/>
             </div>
+            </BrowserRouter>
         );
     }
 }

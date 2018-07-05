@@ -14,7 +14,7 @@ export default class Forminput extends Component {
     handleChange(event) {
         const target = event.target;
         const value = target.value;
-        const name = target.name;
+        const name = target.name;   
         this.setState({
             [name]: value
         });
@@ -29,7 +29,7 @@ export default class Forminput extends Component {
         console.log(val);
         axios({
             method:'post',
-            url:'http://localhost:3003/movies',
+            url:'/movies',
             data:val
         })
             .then(res => {
